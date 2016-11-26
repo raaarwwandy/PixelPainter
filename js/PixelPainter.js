@@ -30,14 +30,18 @@ function grid() {
 	}
 	
 //Create color palette
+
+	var colorArr = [ "red", "blue", "white", "black", "purple", "green"];
+	var currColor = 'white';
+	var selectedColor = null;
+	console.log(currColor);
+
 	function colorSelector(){
 
 		var pallet = document.createElement('div');
 		pallet.id = "pallet";
 		pixelPainter.appendChild(pallet);
 	}
-
-		var colorArr = [ "red", "blue", "white", "black", "purple", "green"];
 
 		function renderColor(){
 			for(var j =0 ; j < colorArr.length; j++){
@@ -73,18 +77,11 @@ function grid() {
 						color.style.backgroundColor = "green";
 						break;
 					}
-
-	var pickCol = color.addEventListener('click', function(){_pickColor();});
 				}
 			}
 
 //Load a color
-	function _pickColor(){
-		var loadColors = colorSelector();
-		loadColors.load();
-		var currColor = null;
-		loadColors.innerHTML(currColor);
-	}
+
 
 //Clear the grid
 
