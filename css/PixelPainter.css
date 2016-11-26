@@ -9,3 +9,9 @@
 	width: 10px;
 	height: 10px;
 }
+
+.colorBtn{
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+}
