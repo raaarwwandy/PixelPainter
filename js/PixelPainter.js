@@ -31,10 +31,7 @@ function grid() {
 	
 //Create color palette
 
-	var colorArr = [ "red", "blue", "white", "black", "purple", "green"];
-	var currColor = 'white';
-	var selectedColor = null;
-	console.log(currColor);
+
 
 	function colorSelector(){
 
@@ -43,7 +40,14 @@ function grid() {
 		pixelPainter.appendChild(pallet);
 	}
 
-		function renderColor(){
+
+
+		function renderColor(){	
+
+		
+	var colorArr = [ "red", "blue", "white", "black", "purple", "green"];
+
+
 			for(var j =0 ; j < colorArr.length; j++){
 				var color = document.createElement('div');
 				color.className = "colorBtn";
@@ -81,6 +85,26 @@ function grid() {
 			}
 
 //Load a color
+		//creating a click function on the pallet
+			// var selector = document.getElementsByClassName('colorBtn');
+			// for (var k = 0 ; k < colorArr.length; k++) {
+			// 	selector.addEventListener("click",  function(event){
+			//  	console.log(event);
+			// });
+			// console.log(selector);
+			// // selector.addEventListener("click",  function(event){
+			// // 	console.log(event);
+			// // 		//calls upon an empty var to store a color
+			// // 		var currColor;
+			// // 		// 
+					
+
+
+			// 		//here is where when you click on the color in the pallet and it would change the color value to the one you pick from the pallet
+
+
+
+			// 		});
 
 
 //Clear the grid
@@ -93,6 +117,6 @@ function grid() {
 		clearGrids();
 		colorSelector();
 		renderColor();
-	}
+}
 
 grid();
