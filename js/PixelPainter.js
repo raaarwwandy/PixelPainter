@@ -42,10 +42,10 @@ function grid() {
 
 
 
-		function renderColor(){	
+	function renderColor(){	
 
 		
-	var colorArr = [ "red", "blue", "white", "black", "purple", "green"];
+		var colorArr = [ "red", "blue", "white", "black", "purple", "green"];
 
 
 			for(var j =0 ; j < colorArr.length; j++){
@@ -85,6 +85,19 @@ function grid() {
 			}
 
 //Load a color
+		function colorPicker(){
+		var colorArr = [ "red", "blue", "white", "black", "purple", "green"];
+		var selector = document.getElementsByClassName('colorBtn');
+		for(var k = 0; k < selector.length; k++){ 
+			selector[k].addEventListener("click", function(event){
+				this.style.backgroundColor;
+				console.log("testing", this.style.backgroundColor);
+
+
+			});
+		}
+		// console.log(selector);
+		}
 		//creating a click function on the pallet
 			// var selector = document.getElementsByClassName('colorBtn');
 			// for (var k = 0 ; k < colorArr.length; k++) {
@@ -117,6 +130,7 @@ function grid() {
 		clearGrids();
 		colorSelector();
 		renderColor();
+		colorPicker();
 }
 
 grid();
