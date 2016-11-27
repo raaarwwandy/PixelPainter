@@ -12,6 +12,14 @@ var currColor = "white";
 	eraser.id = 'erase';
 	eraser.innerHTML = 'ERASE';
 	pixelPainter.appendChild(eraser);
+	eraser.addEventListener('click', function(){
+		erase();
+	});
+
+	function erase(){
+			currColor = "white";
+	}
+
 
 //Create Clear button
 
@@ -19,7 +27,17 @@ var currColor = "white";
 	clear.id = 'clears';
 	clear.innerHTML = 'CLEAR';
 	pixelPainter.appendChild(clear);
-	clear.addEventListener('click', function(){clearGrids();});
+	clear.addEventListener('click', function(){
+		clearGrids();
+	});
+
+	function clearGrids(){
+		var grid = document.getElementsByClassName("miniDiv");
+		for(var e = 0; e < grid.length; e++){
+			currColor = 'white';
+			grid[e].style.backgroundColor = currColor;
+		}
+	}
 
 //Multiple Divs or 'Pixels'
 
@@ -91,7 +109,6 @@ var currColor = "white";
 
 
 		function colorPicker(){
-		// var colorArr = [ "red", "blue", "white", "black", "purple", "green"];
 		var selector = document.getElementsByClassName('colorBtn');
 		for(var k = 0; k < selector.length; k++){ 
 			selector[k].addEventListener("click", function(event){
@@ -108,16 +125,9 @@ var currColor = "white";
 		for(var l = 0; l < showColor.length; l++){
 			showColor[l].addEventListener("click", function(event){
 			event.target.style.backgroundColor = currColor;
-				// console.log("this shows", event.target.style.backgroundColor);
 			});
 		}
 
-	}
-
-//Clear the grid
-
-	function clearGrids(){
-		var clearIt = document.getElementsByTagName('miniDiv');
 	}
 
 		renderGrids(1722);
@@ -126,6 +136,7 @@ var currColor = "white";
 		renderColor();
 		colorPicker();
 		pushColor();
+		erase();
 }
 
 grid();
